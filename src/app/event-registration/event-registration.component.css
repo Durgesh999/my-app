@@ -26,6 +26,7 @@
   
   /* Styles for form elements */
   .child label {
+    text-transform: capitalize;
     display: block;
     margin-bottom: 10px;
   }
