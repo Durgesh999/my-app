@@ -1,0 +1,70 @@
+
+
+    /* Parent container styles */
+    .parent {
+        background-color: #b15555;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        height: 40%;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    button:disabled{
+        opacity: 0.5;
+    }
+
+    /* Child container styles */
+    .child {
+        text-align: center;
+        
+        /* width: 20%;
+        height: 50%; */
+    }
+
+    /* Label styles */
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    /* Input styles */
+    input[type="number"] {
+        padding: 8px;
+        width: 100px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    /* Button styles */
+    button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+        margin-right: 5px;
+    }
+
+    /* Button hover effect */
+    button:hover {
+        background-color: #45a049;
+    }
+
+    /* Result heading styles */
+    h1 {
+        margin-top: 20px;
+        font-size: 24px;
+        color: #333;
+    }
+

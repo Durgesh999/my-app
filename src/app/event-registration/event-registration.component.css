@@ -1,0 +1,54 @@
+/* Styles for parent container */
+.parent {
+    display: flex;
+    justify-content: center; /* Center align children horizontally */
+    align-items: center; /* Center align children vertically */
+    height: 100vh; /* Full viewport height */
+    background-color: #f0f0f0; /* Light gray background */
+  }
+  
+  /* Styles for child container */
+  .child {
+    background-color: #fff; /* White background */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    text-align: center; /* Center align text and inputs */
+    max-width: 400px; /* Limit maximum width */
+    width: 100%; /* Full width */
+  }
+  
+  /* Styles for heading */
+  .child h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles for form elements */
+  .child label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .child input[type="text"],
+  .child button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Include padding and border in width */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  .child button {
+    background-color: #4CAF50; /* Green background */
+    color: #fff; /* White text */
+    border: none;
+    cursor: pointer;
+    width: 30%;
+  }
+  
+  .child button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
