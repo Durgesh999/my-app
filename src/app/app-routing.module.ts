@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, createComponent, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -16,12 +16,27 @@ import { PipesComponent } from './pipes/pipes.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
 import { CartComponent } from './cart/cart.component';
+import { FlipkartComponent } from './flipkart/flipkart.component';
+import { EmployeeDataComponent } from './employee-data/employee-data.component';
+import { VehicleService } from './vehicle.service';
+import { VihicleComponent } from './vihicle/vihicle.component';
+import { AccountComponent } from './account/account.component';
+import { AmazonComponent } from './amazon/amazon.component';
+import { MailComponent } from './mail/mail.component';
+import { ActivityComponent } from './activity/activity.component';
+import { MemeComponent } from './meme/meme.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { StudentComponent } from './student/student.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { CreateStudentsDetailsComponent } from './create-students-details/create-students-details.component';
+import { AuthenticationGuard } from './authentication.guard';
+import { UserComponent } from './user/user.component';
 
 
 
 const routes: Routes = [
 {path:'login', component:LoginComponent},
-{path:'dashboard', component: DashboardComponent, children:[
+{path:'dashboard', canActivate:[AuthenticationGuard], component: DashboardComponent, children:[
   {path:'welcome', component: WelcomeComponent},
   {path:'home', component:HomeComponent},
   {path:'data-binding', component: DataBindingComponent},
@@ -34,7 +49,21 @@ const routes: Routes = [
   {path:'pipes', component:PipesComponent},
   {path: 'employees', component:EmployeesComponent},
   {path: 'Event-Registration',component:EventRegistrationComponent},
-  {path: 'cart', component:CartComponent}
+  {path: 'cart', component:CartComponent},
+  {path: 'flipkart', component:FlipkartComponent},
+  {path:'employee-data', component:EmployeeDataComponent},
+  {path: 'vehicle', component:VihicleComponent},
+  {path:'account',component:AccountComponent},
+  {path:'amazon', component:AmazonComponent},
+  {path:'mail',component:MailComponent},
+  {path:'activity', component:ActivityComponent},
+  {path:'meme',component:MemeComponent},
+  {path:'create-vehicle',component:CreateVehicleComponent},
+  {path:'student',component:StudentComponent},
+  {path:'vehicle-details/:id',component:VehicleDetailsComponent},
+  {path:'edit-vehicle/:id',component:CreateVehicleComponent},
+  {path:'create-student-details',component:CreateStudentsDetailsComponent},
+  {path:'user',component:UserComponent}
 
 ]},
 {path:'',component:LoginComponent},

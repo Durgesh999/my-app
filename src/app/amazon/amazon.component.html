@@ -1,0 +1,45 @@
+<div class="parent">
+
+  <div class="left">
+    <h1>filters</h1>
+    <h2>category</h2>
+    <input type="checkbox">
+    <label for="">men's clothing</label>
+    <input type="checkbox">
+    <label for="">jewellery</label>
+    <input type="checkbox">
+    <label for="">electronics</label>
+    <input type="checkbox">
+    <label for="">women's clothing</label>
+    <h2>price</h2>
+    <input type="checkbox">
+    <label for="">rs.7 to rs.50</label>
+    <input type="checkbox">
+    <label for="">rs.50 to rs.300</label>
+    <input type="checkbox">
+    <label for="">rs.300 to rs.600</label>
+    <input type="checkbox">
+    <label for="">rs.600 to rs.1000</label>
+
+  </div>
+  <div class="right">
+    <div class="search">
+      <label class="select" for="">price range:</label>
+      <select name="" id="">
+          <option value="">all</option>
+          <option value="">low to high</option>
+          <option value="">high to low</option>
+      </select>
+    <div class="card" *ngFor="let amazonItem of amazonItems">
+      <div class="card_image">
+        <img src="{{amazonItem.image}}" alt="" width="200px" height="200px">
+        <button>{{amazonItem.rating.rate}} &#9733; | {{amazonItem.rating.count}}</button>
+      </div>
+      <h4>{{amazonItem.category}}</h4>
+      <p>{{amazonItem.tittle}}</p>
+      <p><strong> rs. {{amazonItem.price}} </strong></p>
+      <title> {{amazonItem.description}} </title>
+
+    </div>
+  </div>
+</div>

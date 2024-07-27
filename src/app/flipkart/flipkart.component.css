@@ -1,0 +1,156 @@
+/* Overall container styling */
+.parent {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ 
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+.left{
+  width: 60%;
+
+}
+.right{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+/* Styling for section a1 */
+.a1 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.a1 input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.a1 button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Styling for section a2, a3, a4 */
+.a2, .a3, .a4 {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.a2 button{
+  background-color: orange;
+}
+.a3 button{
+  background-color: rgb(53, 125, 154);
+  text-transform: capitalize;
+}
+.a4 button{
+  background-color: rgb(69, 64, 64);
+  text-transform: capitalize;
+}
+
+
+
+.a2 button, .a3 button, .a4 button {
+  padding: 8px 16px;
+ 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Styling for the right section */
+.right div {
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.right label {
+  font-weight: bold;
+ 
+}
+
+.right input[type="text"],
+.right input[type="number"] {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.right input[type="radio"] {
+  margin-right: 5px;
+}
+
+.right button {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Styling for the bottom section */
+.bottom table {
+  text-transform: capitalize;
+  color: white;
+  background-color: black;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bottom th, .bottom td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.bottom th {
+  background-color: black;
+  color: white;
+}
+
+.bottom tr:nth-child(even) {
+  background-color: black;
+  
+}
+
+.bottom button {
+  padding: 6px 12px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,0 +1,85 @@
+<div class="parent">
+    <div class="top">
+        <div class="left">
+            <div class="a1">
+                <input (keypress)="search(item)" type="text" placeholder="search" [(ngModel)]="item">
+                <button (click)="bro()">only free delivery</button>
+            </div>
+            <div class="a2">
+                <button (click)="lh()">price low to high</button>
+                <button (click)="hl()">price high to low</button>
+                <button (click)="rlh()">rating low to high</button>
+                <button (click)="rhl()">rating high to low</button>
+            </div>
+            <div class="a3">
+                <button (click)="discount()">apply 50% discount</button>
+                <button (click)="charges()">price withdelivery charges</button>
+            </div>
+            <div class="a4">
+                <button (click)="total()">total price</button>
+                <button (click)="cart()">total cart iteams</button>
+
+            </div>
+
+
+        </div>
+        <div class="right">
+            <form (ngSubmit)="add()">
+                <div class="n1">
+                    <label for="">name :</label>
+                    <input type="text" [(ngModel)]="newitem.productname" name="name">
+                </div>
+                <div class="n2">
+                    <label for="">price :</label>
+                    <input type="number" [(ngModel)]="newitem.price" name="price">
+                </div>
+
+                <div class="n3">
+                    <label for="">rating :</label>
+                    <input type="number" [(ngModel)]="newitem.rating" name="rating">
+
+                </div>
+
+                <div class="n4">
+                    <label for="">free delivery :</label>
+                    <input [(ngModel)]="newitem.freedelivery" id="ss" type="radio" name="11" [value]="true">
+                    <label for="ss">yes</label>
+                    <input [(ngModel)]="newitem.freedelivery" id="ff" type="radio" name="11" [value]="false">
+                    <label for="ff">no</label>
+
+                </div>
+                <button id="b" type="submit">add to cart</button>
+            </form>
+
+        </div>
+    </div>
+    <div class="bottom">
+        <table>
+            <thead>
+                <tr>
+                    <th>s.no</th> 
+                    <th>product name</th>
+                    <th>price</th>
+                    <th>rating</th>
+                    <th>free develiry</th>
+                    <th>action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products ; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{product.productname}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.rating}}</td>
+                    <td>{{product.freedelivery}}</td>
+
+                    <td>
+                        <button (click)="delete(i)">delete</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

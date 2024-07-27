@@ -1,0 +1,30 @@
+<div class="parent">
+    <div class="input">
+        <input type="text" (keyup)="filter(term)" placeholder="search details" [(ngModel)]="term" >
+    </div>
+    <div class="card" *ngFor="let student of students">
+        <div class="top">
+            <div class="tt1">
+                <img src="{{student.school_logo}}" alt="" height="50px" width="50px">
+            </div>
+            <div class="tt2">
+                <h1>{{student.school_name}}</h1>
+                <h6>{{student.school_city}}</h6>
+                <h6>{{student.school_pin}}</h6>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="bb1">
+                <img src="{{student.profile_picture}}" alt="" width="150px">
+            </div>
+            <div class="bb2">
+                <h6>name:{{student.name}}</h6>
+                <h6>phone:{{student.phone}}</h6>
+                <h6>city:{{student.city}}</h6>
+                <h6>dob:{{student.dob | date:"dd-MM-yyyy"}} </h6>
+                <h6>email:{{student.email}}</h6>
+            </div>
+            <button class="delt" (click)="delete(student.id)">delete</button>
+        </div>
+
+    </div>

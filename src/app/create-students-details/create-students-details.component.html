@@ -1,0 +1,31 @@
+<form action="" [formGroup]="studentform">
+    <h1>create student details</h1>
+    <div class="details">
+        <label for="">name</label>
+        <input type="text" formControlName="name">
+        <br>
+
+        <label for="">dob</label>
+        <input type="text" formControlName="dob">
+        <br>
+
+        <label for="">phone</label>
+        <input type="text" formControlName="phone">
+        <br>
+
+        <label for="">email</label>
+        <input type="text" formControlName="email">
+        <br>
+
+        <label for="">city:</label>
+        <input type="text" formControlName="city">
+        <br>
+
+        <label for="">profile_picture</label>
+        <input type="text" formControlName="profile_picture">
+        <br>
+
+        <button (click)="create()">create</button>
+    </div>
+
+</form>

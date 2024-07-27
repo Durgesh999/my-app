@@ -9,7 +9,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HomeComponent } from './home/home.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { RectangleComponent } from './rectangle/rectangle.component';
 import { CircleComponent } from './circle/circle.component';
@@ -20,6 +20,21 @@ import { PipesComponent } from './pipes/pipes.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
 import { CartComponent } from './cart/cart.component';
+import { FlipkartComponent } from './flipkart/flipkart.component';
+import { EmployeeDataComponent } from './employee-data/employee-data.component';
+import { VihicleComponent } from './vihicle/vihicle.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AccountComponent } from './account/account.component';
+import { AmazonComponent } from './amazon/amazon.component';
+import { MailComponent } from './mail/mail.component';
+import { ActivityComponent } from './activity/activity.component';
+import { MemeComponent } from './meme/meme.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { StudentComponent } from './student/student.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { CreateStudentsDetailsComponent } from './create-students-details/create-students-details.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -39,12 +54,28 @@ import { CartComponent } from './cart/cart.component';
     PipesComponent,
     EmployeesComponent,
     EventRegistrationComponent,
-    CartComponent
+    CartComponent,
+    FlipkartComponent,
+    EmployeeDataComponent,
+    VihicleComponent,
+    AccountComponent,
+    AmazonComponent,
+    MailComponent,
+    ActivityComponent,
+    MemeComponent,
+    CreateVehicleComponent,
+    CreateAccountComponent,
+    StudentComponent,
+    VehicleDetailsComponent,
+    CreateStudentsDetailsComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

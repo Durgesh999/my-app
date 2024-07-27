@@ -1,0 +1,21 @@
+<form [formGroup]="accountForm">
+    <h1>create account form</h1>
+    <label for="">account name:</label>
+    <input type="text"formControlName="accountname" >
+    <label for="">account number:</label>
+    <input type="text" formControlName="accountnumber">
+    <label for="">account balance:</label>
+    <input type="text" formControlName="accountbalance">
+    <label for="">city:</label>
+    <input type="text" formControlName="city">
+    <label for="">profile:</label>
+    <input type="text" formControlName="profile">
+    <label for="">color:</label>
+    <input type="text" formControlName="color">
+    <label for="">image:</label>
+    <input type="text" formControlName="image">
+    <label for="">cost:</label>
+    <input type="text" formControlName="cost">
+    <button (click)="submit()">submit</button>
+</form>
+

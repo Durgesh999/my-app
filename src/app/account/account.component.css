@@ -1,0 +1,8 @@
+tbody td button{
+    background-color: red;
+    font-size: 20px;
+    border: 0;
+    border-radius: 6px;
+    text-transform: capitalize;
+    color: white;
+}
