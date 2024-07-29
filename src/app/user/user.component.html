@@ -1,28 +1,136 @@
-<form [formGroup]="userform" >
+<form [formGroup]="userform">
     <h1>Create User Form</h1>
+
     <label for="">Name:</label>
-    <input type="text" formControlName="name">
+    <input type="text" formControlName="name" appCapital>
     <br>
+    <div *ngIf="userform.get('name')?.touched && userform.get('name')?.invalid">
+        <p class="error" *ngIf="userform.get('name')?.errors?.['required']">Name is required.</p>
+        <p class="error" *ngIf="userform.get('name')?.errors?.['minlength']">Name should container minmum 3 charecters
+            only</p>
+        <p class="error" *ngIf="userform.get('name')?.errors?.['maxlength']">Maximum 10 charecters allwed in name.</p>
+
+    </div>
 
     <label for="">Age:</label>
     <input type="number" formControlName="age">
-    <br>
+    <div *ngIf="userform.get('age')?.touched && userform.get('age')?.invalid">
+        <p class="error" *ngIf="userform.get('age')?.errors?.['required']">Age is required.</p>
+        <p class="error" *ngIf="userform.get('age')?.errors?.['min']"> Minimum 0 years.</p>
+        <p class="error" *ngIf="userform.get('age')?.errors?.['max']">Maximum 100 years.</p>
 
-    <label for="">Email:</label>
-    <input type="email" formControlName="email">
+    </div>
     <br>
 
     <label for="">Phone:</label>
     <input type="number" formControlName="phone">
-    <br>
-    <div formGroupName="address">
-        <label for="">City:</label>
-    <input type="text" formControlName="city">
+    <div *ngIf="userform.get('phone')?.touched && userform.get('phone')?.invalid">
+        <p class="error" *ngIf="userform.get('phone')?.errors?.['required']">Phone is required.</p>
+        <p class="error" *ngIf="userform.get('phone')?.errors?.['min']"> Minimum 10 digits required.</p>
+        <p class="error" *ngIf="userform.get('phone')?.errors?.['max']">Maximum 10 digits required .</p>
+
+    </div>
     <br>
 
-    <label for="">Pincode:</label>
-    <input type="number" formControlName="pincode">
-    <br>
+    <label for="">Email:</label>
+    <input type="email" formControlName="email">
+    <div *ngIf="userform.get('email')?.touched && userform.get('email')?.invalid">
+        <p class="error" *ngIf="userform.get('email')?.errors?.['required']">email is required.</p>
+        <p class="error" *ngIf="userform.get('email')?.errors?.['email']"> invalid email format.</p>
+        <p class="error" *ngIf="userform.get('email')?.errors?.['domainValidator ']">Only capgemini mails accepted.</p>
+
     </div>
-    <button (click)="submit()">submit</button>
+    <br>
+
+    <div formGroupName="address">
+        <label for="">City:</label>
+        <input type="text" formControlName="city">
+        <div *ngIf="userform.get('address')?.get('city')?.touched && userform.get('addres')?.get('city')?.invalid">
+            <p class="error" *ngIf="userform.get('address')?.get('city')?.errors?.['required']">City is required.</p>
+
+
+        </div>
+        <br>
+
+        <label for="">Pincode:</label>
+        <input type="number" formControlName="pincode">
+        <div *ngIf="userform.get('pincode')?.touched && userform.get('pincode')?.invalid">
+            <p class="error" *ngIf="userform.get('pincode')?.errors?.['required']">pincode is required.</p>
+            <br>
+        </div>
+    </div>
+
+    <label for="">Type:</label>
+    <input type="radio" name="type" formControlName="type" value="dayScholor">
+    <label for="">DayScholor:</label>
+    <input type="radio" name="type" formControlName="type" value="residential">
+    <label for="">Residential</label>
+    <br>
+    <div *ngIf="userform.get('type')?.value == 'dayScholor'">
+        <label for="">BusFee:</label>
+        <input type="number" formControlName="busfee">
+        <div *ngIf="userform.get('busfee')?.touched && userform.get('busfee')?.invalid">
+            <p class="error" *ngIf="userform.get('busfee')?.errors?.['required']">busFee is required.</p>
+            <p class="error" *ngIf="userform.get('busfee')?.errors?.['min']"> Minimum 10k fee.</p>
+
+
+        </div>
+        <br>
+    </div>
+
+    <div *ngIf="userform.get('type')?.value == 'residential'">
+        <label for="">HostelFee:</label>
+        <input type="number" formControlName="hostelfee">
+        <div *ngIf="userform.get('hostel')?.touched && userform.get('busfee')?.invalid">
+            <p class="error" *ngIf="userform.get('hostelfee')?.errors?.['required']">hostelfee is required.</p>
+            <p class="error" *ngIf="userform.get('hostelfee')?.errors?.['min']"> Minimum 10k fee.</p>
+
+            <br>
+        </div>
+
+
+    </div>
+
+    <label for="">Cards:</label>
+    <button (click)="addCard()">add card</button>
+    <br>
+
+    <div formArrayName="cards">
+        <div *ngFor="let card of cardsFormArray.controls; let i=index">
+            <div formGroupName="{{i}}">
+
+                <h3>Card {{i+1}}</h3>
+
+                <label for="">Number:</label>
+                <input type="number" formControlName="number">
+                <div *ngIf="cardsFormArray.controls[i].get('number')?.touched && cardsFormArray.controls[i].get('number')?.invalid">
+                    <p class="error" *ngIf="cardsFormArray.controls[i].get('number')?.errors?.['required']">Card number is required</p>
+
+                </div>
+                <br>
+
+                <label for="">Expiry:</label>
+                <input type="month" formControlName="expiry">
+                <div *ngIf="cardsFormArray.controls[i].get('expiry')?.touched && cardsFormArray.controls[i].get('expiry')?.invalid">
+                    <p class="error" *ngIf="cardsFormArray.controls[i].get('expiry')?.errors?.['required']">Expiry date is required</p>
+
+                </div>
+                <br>
+
+                <label for="">CVV:</label>
+                <input type="number" formControlName="cvv">
+                <div *ngIf="cardsFormArray.controls[i].get('cvv')?.touched && cardsFormArray.controls[i].get('cvv')?.invalid">
+                    <p class="error" *ngIf="cardsFormArray.controls[i].get('cvv')?.errors?.['required']">Cvv number is required</p>
+
+                </div>
+                <br>
+
+                <button (click)="deleteCard(i)">delete</button>
+            </div>
+        </div>
+    </div>
+
+    <button [disabled]="userform.invalid" (click)="submit()">submit</button>
+
+    <button (click)="submit()">submit2</button>
 </form>

@@ -6,3 +6,6 @@ label{
 form{
     text-transform: capitalize;
 }
+.error{
+    color: red;
+}

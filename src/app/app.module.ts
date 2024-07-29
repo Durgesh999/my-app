@@ -35,6 +35,7 @@ import { StudentComponent } from './student/student.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { CreateStudentsDetailsComponent } from './create-students-details/create-students-details.component';
 import { UserComponent } from './user/user.component';
+import { CapitalDirective } from './capital.directive';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { UserComponent } from './user/user.component';
     StudentComponent,
     VehicleDetailsComponent,
     CreateStudentsDetailsComponent,
-    UserComponent
+    UserComponent,
+    CapitalDirective
   ],
   imports: [
     BrowserModule,
