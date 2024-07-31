@@ -36,6 +36,18 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
 import { CreateStudentsDetailsComponent } from './create-students-details/create-students-details.component';
 import { UserComponent } from './user/user.component';
 import { CapitalDirective } from './capital.directive';
+import { PricePipe } from './price.pipe';
+import { CreateCompanyComponent } from './create-company/create-company.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { Sibling1Component } from './sibling1/sibling1.component';
+import { Sibling2Component } from './sibling2/sibling2.component';
+import { Calculator2Component } from './calculator2/calculator2.component';
+import { OperationsComponent } from './operations/operations.component';
+import { RatingComponent } from './rating/rating.component';
+import { AboutCompanyComponent } from './about-company/about-company.component';
+import { AboutCeoComponent } from './about-ceo/about-ceo.component';
+import { AboutUsModule } from './about-us/about-us.module';
 
 @NgModule({
   declarations: [
@@ -70,14 +82,26 @@ import { CapitalDirective } from './capital.directive';
     VehicleDetailsComponent,
     CreateStudentsDetailsComponent,
     UserComponent,
-    CapitalDirective
+    CapitalDirective,
+    PricePipe,
+    CreateCompanyComponent,
+    ParentComponent,
+    ChildComponent,
+    Sibling1Component,
+    Sibling2Component,
+    Calculator2Component,
+    OperationsComponent,
+    RatingComponent,
+    AboutCompanyComponent,
+    AboutCeoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AboutUsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
