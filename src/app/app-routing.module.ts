@@ -55,7 +55,8 @@ const routes: Routes = [
   {path:'pipes', component:PipesComponent},
   {path: 'employees', component:EmployeesComponent},
   {path: 'Event-Registration',component:EventRegistrationComponent},
-  {path: 'cart', component:CartComponent}
+  {path: 'cart', component:CartComponent},
+  {path:'person-two'}
 
 ]},
 {path:'',component:LoginComponent},
