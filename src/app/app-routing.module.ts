@@ -55,32 +55,7 @@ const routes: Routes = [
   {path:'pipes', component:PipesComponent},
   {path: 'employees', component:EmployeesComponent},
   {path: 'Event-Registration',component:EventRegistrationComponent},
-  {path: 'cart', component:CartComponent},
-  {path: 'flipkart', component:FlipkartComponent},
-  {path:'employee-data', component:EmployeeDataComponent},
-  {path: 'vehicle', component:VihicleComponent},
-  {path:'account',component:AccountComponent},
-  {path:'amazon', component:AmazonComponent},
-  {path:'mail',component:MailComponent},
-  {path:'activity', component:ActivityComponent},
-  {path:'meme',component:MemeComponent},
-  {path:'create-vehicle',component:CreateVehicleComponent},
-  {path:'student',component:StudentComponent},
-  {path:'vehicle-details/:id',component:VehicleDetailsComponent},
-  {path:'edit-vehicle/:id',component:CreateVehicleComponent},
-  {path:'create-student-details',component:CreateStudentsDetailsComponent},
-  {path:'user',canDeactivate:[NotifyGuard], component:UserComponent},
-  {path:'create-company', component:CreateCompanyComponent},
-  {path:'parent', component:ParentComponent},
-  {path:'calculator2', component:Calculator2Component},
-  {path: 'rating', component:RatingComponent},
-  {path:'about-company', component: AboutCompanyComponent},
-  
-  {
-    path: 'payments',
-    loadChildren: () => import('./payments/payments.module').then(m => m.PaymentsModule)
-  }
-  
+  {path: 'cart', component:CartComponent}
 
 ]},
 {path:'',component:LoginComponent},
